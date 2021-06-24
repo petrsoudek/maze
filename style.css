@@ -1,0 +1,69 @@
+#stage {
+	width: 100%;
+	position: absolute;
+	height: 100%;
+}
+
+#stage img {
+	object-fit: cover !important;
+	height: 100%;
+	width: 100%;
+}
+
+#navigation {
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+}
+
+#map {
+	position: absolute;
+	left: 0px;
+	bottom: 0;
+	background-color: rgb(255, 255, 255);
+
+	-webkit-border-radius: 10px 10px 10px 0px;
+-moz-border-radius: 10px 10px 10px 0px;
+border-radius: 10px 10px 10px 0px;
+	border: solid 1px black;
+}
+
+.map {
+	text-align: center;
+}
+
+.map td {
+	border-radius: 5px;
+	width: 80px;
+	height: 70px;
+}
+
+.aktualniSouradnice {
+	background-color: #00FF00
+}
+
+.navigationArrow {
+	font-size: 48px;
+}
+
+.navigationArrow:hover {
+	color: rgb(0, 225, 255);
+}
+
+#app {
+	width: 100%;
+	height: 100%;
+	background-color:white;
+}
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+html {
+	font-family: 'Sigmar One', cursive;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	
+}

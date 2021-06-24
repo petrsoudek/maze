@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bludiště</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div id="stage">
+            <img v-bind:src="aktualniKarta.img" />
+        </div>
+
+
+        <div id="navigation">
+            <div v-if=exists(-1,0) v-on:click=move(-1,0)><span class="navigationArrowWrapper"><i
+                        class="far fa-arrow-alt-circle-left navigationArrow"></i></span>
+            </div>
+            <div v-if=exists(1,0) v-on:click=move(1,0)><span class="navigationArrowWrapper"><i
+                        class="far fa-arrow-alt-circle-right navigationArrow"></i></span>
+            </div>
+            <div v-if=exists(0,1) v-on:click=move(0,1)><span class="navigationArrowWrapper"><i
+                        class="far fa-arrow-alt-circle-up navigationArrow"></i></span></div>
+            <div v-if=exists(0,-1) v-on:click=move(0,-1)><span class="navigationArrowWrapper"><i
+                        class="far fa-arrow-alt-circle-down navigationArrow"></i></span>
+            </div>
+
+        </div>
+
+
+        <div id="map">
+            <table class="map">
+                <tr v-for="y in yLoop">
+                    <td v-for="x in xLoop"
+                        v-bind:class="{ 'aktualniSouradnice' : ((x == aktualniSouradnice.x) && (y == aktualniSouradnice.y))}">
+                        {{getForCoords(x,y).name}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
